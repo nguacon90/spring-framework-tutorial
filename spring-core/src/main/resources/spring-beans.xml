@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+    
+    <bean id="helloWorld" class="vn.com.nguacon.springcore.beans.HelloWorld"></bean>
+    
+    <!-- Khởi tạo bean với các giá trị mặc định thông qua properties-->
+    <bean id="studentA" class="vn.com.nguacon.springcore.beans.Student">
+    	<property name="name" value="Nguyễn Văn A"/>
+    	<property name="age" value="18"/>
+    	<property name="address" value="Hà Nội"/>
+    </bean>
+    
+    <!-- Khởi tạo đối tượng với giá trị mặc định thông qua constructor  -->
+    <bean id="studentB" class="vn.com.nguacon.springcore.beans.Student">
+    	<constructor-arg index="0" value="Đỗ Thị K"/>
+    	<constructor-arg index="1" value="26"/>
+    	<constructor-arg index="2" value="Thái Bình"/>
+    </bean>
+    
+    <!-- Ví dụ về phạm vi scope=prototype -->
+    <bean id="studentC" class="vn.com.nguacon.springcore.beans.Student" scope="prototype">
+    	<constructor-arg index="0" value="Đỗ Thị K"/>
+    	<constructor-arg index="1" value="26"/>
+    	<constructor-arg index="2" value="Thái Bình"/>
+    </bean>
+    
+    <!-- Ví dụ về lifecircle của 1 bean  -->
+    <bean id="lifeCircleBeanDemo" class="vn.com.nguacon.springcore.beans.BeanLifeCircle"
+    	 init-method="init" destroy-method="destroy"></bean>
+    
+</beans>
