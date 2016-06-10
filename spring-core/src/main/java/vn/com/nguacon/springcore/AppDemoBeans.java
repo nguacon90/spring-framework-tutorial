@@ -14,7 +14,7 @@ public class AppDemoBeans {
 		context = new ClassPathXmlApplicationContext("spring-beans.xml");
 		HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorld");
 		helloWorld.sayHello();
-		
+	
 		Student studentA = (Student) context.getBean("studentA");
 		System.out.println(studentA);
 

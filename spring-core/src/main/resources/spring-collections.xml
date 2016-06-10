@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+    
+	<!--Khai bao danh sach thanh pho -->
+	<bean id="address" class="vn.com.nguacon.springcore.colltections.Address">
+		<property name="provinces">
+			<list>
+				<value>Hà Nội</value>
+				<value>Thái Bình</value>
+				<value>Hà Tây</value>
+				<value>Hà Nam</value>
+			</list>
+		</property>
+		
+		<property name="provincesMap">
+			<map>
+				<entry key="001" value="Hà Nội"></entry>
+				<entry key="002" value="Thái Bình"></entry>
+				<entry key="003" value="Hà Tây"></entry>
+				<entry key="004" value="Hà Nam"></entry>
+			</map>
+		</property>
+	</bean>  
+	
+	<bean id="person1" class="vn.com.nguacon.springcore.colltections.Person">
+		<property name="name" value="Nguyen Van A" />
+		<property name="age" value="18" />
+	</bean>
+	<!-- List Object Person  -->
+	<bean id="customer" class="vn.com.nguacon.springcore.colltections.Customer">
+		<property name="persons">
+			<list>
+				<bean class="vn.com.nguacon.springcore.colltections.Person">
+					<property name="name" value="Tran Van B" />
+					<property name="age" value="28" />
+				</bean>
+				
+				<ref bean="person1"/>
+			</list>
+		</property>
+		
+		<property name="personsMap">
+			<map>
+				<entry key="001">
+					<bean class="vn.com.nguacon.springcore.colltections.Person">
+						<property name="name" value="Tran Van B" />
+						<property name="age" value="28" />
+					</bean>
+				</entry>
+				<entry key="002" value-ref="person1"></entry>
+			</map>
+		</property>
+	</bean>  
+	  
+</beans>
