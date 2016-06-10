@@ -6,6 +6,7 @@ import java.util.Map;
 public class Address {
 	private List<String> provinces;
 	private Map<String, String> provincesMap;
+	private Person person;
 	
 	public List<String> getProvinces() {
 		return provinces;
@@ -21,6 +22,14 @@ public class Address {
 
 	public void setProvincesMap(Map<String, String> provincesMap) {
 		this.provincesMap = provincesMap;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 
 }

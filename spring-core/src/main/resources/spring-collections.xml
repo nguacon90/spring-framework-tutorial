@@ -5,7 +5,7 @@
     http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
     
 	<!--Khai bao danh sach thanh pho -->
-	<bean id="address" class="vn.com.nguacon.springcore.colltections.Address">
+	<bean id="address" class="vn.com.nguacon.springcore.collections.Address">
 		<property name="provinces">
 			<list>
 				<value>Hà Nội</value>
@@ -23,19 +23,22 @@
 				<entry key="004" value="Hà Nam"></entry>
 			</map>
 		</property>
+		
 	</bean>  
 	
-	<bean id="person1" class="vn.com.nguacon.springcore.colltections.Person">
+	<bean id="person1" class="vn.com.nguacon.springcore.collections.Person">
 		<property name="name" value="Nguyen Van A" />
 		<property name="age" value="18" />
 	</bean>
+	
 	<!-- List Object Person  -->
-	<bean id="customer" class="vn.com.nguacon.springcore.colltections.Customer">
+	<bean id="customer" class="vn.com.nguacon.springcore.collections.Customer">
 		<property name="persons">
 			<list>
-				<bean class="vn.com.nguacon.springcore.colltections.Person">
+				<bean class="vn.com.nguacon.springcore.collections.Person">
 					<property name="name" value="Tran Van B" />
 					<property name="age" value="28" />
+					<property name="address" ref="address"></property>
 				</bean>
 				
 				<ref bean="person1"/>
@@ -45,9 +48,10 @@
 		<property name="personsMap">
 			<map>
 				<entry key="001">
-					<bean class="vn.com.nguacon.springcore.colltections.Person">
+					<bean class="vn.com.nguacon.springcore.collections.Person">
 						<property name="name" value="Tran Van B" />
 						<property name="age" value="28" />
+						<property name="address" ref="address"></property>
 					</bean>
 				</entry>
 				<entry key="002" value-ref="person1"></entry>

@@ -4,4 +4,18 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
     
+    <!-- Inject qua contructor -->
+    <bean id="controller" class="vn.com.nguacon.springcore.dependencyInjection.UserLoginController">
+    	<constructor-arg>
+    		<ref bean="userDao"/>
+    	</constructor-arg>
+    </bean>
+    
+    <!-- Inject qua properties -->
+    <bean id="controller2" class="vn.com.nguacon.springcore.dependencyInjection.UserLoginController">
+    	<property name="userDao" ref="userDao"/>
+    </bean>
+    
+    <bean id="userDao" class="vn.com.nguacon.springcore.dependencyInjection.UserDAO"></bean>
+    
 </beans>

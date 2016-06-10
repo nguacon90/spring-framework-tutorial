@@ -1,6 +1,7 @@
 package vn.com.nguacon.springcore.collections;
 
 public class Person {
+	private Address address;
 	private String name;
 	private int age;
 
@@ -22,6 +23,14 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", age=" + age + "]";
+		return "Person [name=" + name + ", age=" + age + "]" + ", provinces: " + address.getProvinces();
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 }
