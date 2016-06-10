@@ -29,6 +29,7 @@
 	<bean id="person1" class="vn.com.nguacon.springcore.collections.Person">
 		<property name="name" value="Nguyen Van A" />
 		<property name="age" value="18" />
+		<property name="address" ref="address"></property>
 	</bean>
 	
 	<!-- List Object Person  -->

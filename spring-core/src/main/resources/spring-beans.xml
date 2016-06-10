@@ -31,4 +31,8 @@
     <bean id="lifeCircleBeanDemo" class="vn.com.nguacon.springcore.beans.BeanLifeCircle"
     	 init-method="init" destroy-method="destroy"></bean>
     
+    
+    <bean id="ageValidator" class="vn.com.nguacon.springcore.beans.AgeValidator"></bean>
+    
+    <bean id="dateValidator" class="vn.com.nguacon.springcore.beans.DateValidator"></bean>
 </beans>
