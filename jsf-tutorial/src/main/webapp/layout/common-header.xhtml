@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<body>
+	<ui:composition>
+		<h:form>
+        <h:commandButton action='#{languageBean.change("vi")}'
+            value="vi" image="resources/images/vn.png" />
+        <h:commandButton action='#{languageBean.change("en")}'
+            value="en" image="resources/images/en.png" />
+    </h:form>
+		
+		<h:form>
+			<ul class="menu">
+				<li
+					class="#{view.viewId eq '/index.xhtml' || view.viewId eq '/welcome.xhtml' ? 'active' : ''}">
+					<h:link outcome="index.xhtml" value="#{bundle['menu.home']}" /></li>
+				<li class="#{view.viewId eq '/dataTable.xhtml' ? 'active' : ''}">
+				<h:link value="#{bundle['menu.tableData']}" outcome="dataTable.xhtml" /></li>
+			</ul>
+		</h:form>
+	</ui:composition>
+</body>
+</html>
