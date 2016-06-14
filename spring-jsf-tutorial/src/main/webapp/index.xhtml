@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<title>DEMO</title>
+<h:outputStylesheet name="style.css" library="css"/>
+</h:head>
+<h:body>
+	<div class="page">
+		<h2>Spring JSF Integration Demo</h2>
+		<hr/>
+		
+		<div class="content">
+			<h:form>
+				<h:dataTable value="#{orderBean.orders}" var="order"
+					styleClass="order-table" headerClass="order-table-header"
+					rowClasses="order-table-odd-row,order-table-even-row">
+					<h:column>
+						<f:facet name="header">Order Id</f:facet>
+						<h:outputText value="#{order.id}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Time Placed</f:facet>
+						<h:outputText value="#{order.timePlaced}">
+							<f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+						</h:outputText>
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Symbol</f:facet>
+    					<h:outputText value="#{order.symbol}"/>
+    				</h:column>
+
+					<h:column>
+						<f:facet name="header">Price</f:facet>
+						<h:outputText value="#{order.price}">
+							<f:convertNumber pattern="###,###" />
+						</h:outputText>
+
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Quantity</f:facet>
+						<h:outputText value="#{order.quantity}">
+							<f:convertNumber pattern="###,###" />
+						</h:outputText>
+					</h:column>
+
+					<f:facet name="footer">
+						<h:outputText value="Không có dữ liệu" rendered="#{empty orderBean.orders}"/>
+					</f:facet>
+				</h:dataTable>
+			</h:form>
+			
+			<h:form>
+				<hr />
+				<h2>Place Order</h2>
+				<table>
+					<tr>
+						<td>Symbol :</td>
+						<td><h:inputText id="symbol" size="20"
+								value="#{orderBean.order.symbol}" /> <h:message for="symbol"
+								style="color:red" /></td>
+					</tr>
+					<tr>
+						<td>Price :</td>
+						<td><h:inputText id="price" size="5"
+								value="#{orderBean.order.price}" /> <h:message for="price"
+								style="color:red" /></td>
+					</tr>
+					<tr>
+						<td>Quantity :</td>
+						<td><h:inputText id="quantity" size="5"
+								value="#{orderBean.order.quantity}" /> <h:message
+								for="quantity" style="color:red" /></td>
+					</tr>
+					<tr>
+						<td>
+							<!-- register a PostValidateEvent --> 
+							<f:event listener="#{orderBean.validateOrder}" type="postValidate" />
+						</td>
+						<td><h:commandButton value="Add"
+								action="#{orderBean.addOrder}" /></td>
+					</tr>
+				</table>
+			</h:form>
+		</div>
+		
+	</div>
+</h:body>
+
+</html>
