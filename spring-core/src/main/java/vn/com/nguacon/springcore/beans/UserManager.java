@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserManager {
+public class UserManager { 
 	@Autowired
 	@Qualifier("ageValidator") 
 	private Validator validator;

@@ -33,6 +33,7 @@ public class OrderController implements Serializable {
 	}
 	
 	public List<Order> getOrders() {
+		//Select tu DB set to orders.
 		return orders;
 	}
 
@@ -47,6 +48,7 @@ public class OrderController implements Serializable {
 	}
 	
 	public void saveOrder(Order order) {
+		//UPDATE TO DB
 		order.setEditable(false);
 	}
 	

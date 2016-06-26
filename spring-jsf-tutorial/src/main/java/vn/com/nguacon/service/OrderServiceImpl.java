@@ -42,6 +42,8 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	public List<Order> getOrders() {
+		//Loc cho toi nhung order thoa man 1 dkien nao 
+		//TODO
 		return orders;
 	}
 

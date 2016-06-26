@@ -9,14 +9,12 @@
 	<ui:composition template="layout/common-layout.xhtml">
 		
 		<ui:define name="content">
-		<h1>Hello World. Welcome Demo</h1>
-		<h:form>
-			<h:inputText value="#{helloController.name}"></h:inputText>
-			<h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
-		</h:form>
-		
+			<h1>Hello World. Welcome Demo</h1>
+			<h:form>
+				<h:inputText value="#{helloController.name}"></h:inputText>
+				<h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
+			</h:form>
 		</ui:define>
-		
 		
 	</ui:composition>
 </h:body>
