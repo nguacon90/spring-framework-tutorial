@@ -10,5 +10,6 @@
 </head>
 <body>
 	<h2>Hello World</h2>
+	<div><a href="orders">Place Order</a></div>
 </body>
 </html>

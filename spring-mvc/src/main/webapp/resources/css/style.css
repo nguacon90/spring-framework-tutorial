@@ -1,10 +1,49 @@
-html, body {
+html, body, p, div, ul, li, a, span, select {
 	font-family: Arial;
-	font-size: 13px;
+	font-size: 14px;
 	margin: 0;
 	padding: 0;
 }
 
-h2 {
-	color: #2840cb;
+.page {
+	margin: 0 auto;
+	width: 975px;
+	
+}
+
+.order-table{   
+	border-collapse:collapse;
+	line-height: 25px;
+	width: 100%;
+}
+
+.order-table th{
+	text-align:center;
+	background:none repeat scroll 0 0 #E5E5E5;
+	border-bottom:1px solid #BBBBBB;
+	padding: 5px 10px;
+}
+
+.order-table .odd{
+	text-align:center;
+	background:none repeat scroll 0 0 #FFFFFFF;
+	border-top:1px solid #BBBBBB;
+}
+
+.order-table .even{
+	text-align:center;
+	background:none repeat scroll 0 0 #F9F9F9;
+	border-top:1px solid #BBBBBB;
+}
+
+.enterOrder {
+	line-height: 25px;	
+}
+
+.enterOrder div {
+	padding: 10px 0;
+}
+
+.error {
+	color: red;
 }
