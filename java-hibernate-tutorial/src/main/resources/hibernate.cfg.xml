@@ -13,5 +13,7 @@
         <!-- <property name="hibernate.hbm2ddl.auto">create</property> --> <!-- for demo if not created table-->
         <property name="show_sql">true</property>
         <mapping class="vn.com.nguacon.model.Employee"></mapping>
+        <mapping class="vn.com.nguacon.model.Department"></mapping>
+        <mapping class="vn.com.nguacon.model.Meeting"></mapping>
     </session-factory>
 </hibernate-configuration>
