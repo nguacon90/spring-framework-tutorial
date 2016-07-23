@@ -10,10 +10,20 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <!-- <property name="hibernate.hbm2ddl.auto">create</property> --> <!-- for demo if not created table-->
+        <property name="hibernate.hbm2ddl.auto">create</property><!-- for demo if not created table-->
         <property name="show_sql">true</property>
         <mapping class="vn.com.nguacon.model.Employee"></mapping>
         <mapping class="vn.com.nguacon.model.Department"></mapping>
         <mapping class="vn.com.nguacon.model.Meeting"></mapping>
+        <mapping class="vn.com.nguacon.model.persistcascade.Country"></mapping>
+        <mapping class="vn.com.nguacon.model.persistcascade.State"></mapping>
+        <mapping class="vn.com.nguacon.model.removecascade.Country"></mapping>
+        <mapping class="vn.com.nguacon.model.removecascade.State"></mapping>
+        <mapping class="vn.com.nguacon.model.refreshcascade.Country"></mapping>
+        <mapping class="vn.com.nguacon.model.refreshcascade.State"></mapping>
+        <mapping class="vn.com.nguacon.model.mergecascade.Country"></mapping>
+        <mapping class="vn.com.nguacon.model.mergecascade.State"></mapping>
+        <mapping class="vn.com.nguacon.model.detachcascade.Country"></mapping>
+        <mapping class="vn.com.nguacon.model.detachcascade.State"></mapping>
     </session-factory>
 </hibernate-configuration>
