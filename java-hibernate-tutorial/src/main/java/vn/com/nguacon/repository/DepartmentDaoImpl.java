@@ -2,6 +2,8 @@ package vn.com.nguacon.repository;
 
 import java.util.List;
 
+import org.hibernate.query.Query;
+
 import vn.com.nguacon.model.Department;
 
 public class DepartmentDaoImpl extends HibernateDaoSupport implements DepartmentDao {
@@ -30,6 +32,23 @@ public class DepartmentDaoImpl extends HibernateDaoSupport implements Department
 		}
 		
 		delete(department);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Department> findAllByCallNameQueries() {
+		openSession();
+		Query<Department> namedQuery = session.getNamedQuery("findAll");
+		return namedQuery.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Department findByIdCallingNameQueries(int id) {
+		openSession();
+		Query<Department> namedQuery = session.getNamedQuery("findById");
+		namedQuery.setParameter("departmentId", id);
+		return namedQuery.getSingleResult();
 	}
 
 }

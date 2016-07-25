@@ -12,4 +12,8 @@ public interface DepartmentDao {
 	List<Department> findAll();
 
 	void delete(int id);
+	
+	List<Department> findAllByCallNameQueries();
+	
+	Department findByIdCallingNameQueries(int id);
 }

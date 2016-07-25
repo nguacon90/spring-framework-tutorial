@@ -10,6 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+
+@NamedQueries({
+	@NamedQuery(name="findAll", query="from Department"),
+	@NamedQuery(name="findById", query="from Department where departmentId = :departmentId")
+})
 @Entity
 @Table(name="departments")
 public class Department {

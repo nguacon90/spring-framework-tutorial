@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
 public class HibernateDaoSupport {
-	private Session session;
+	protected Session session;
 	protected static final SessionFactory sessionFactory = buildSessionFactory();
 
 	private static SessionFactory buildSessionFactory() {
@@ -22,7 +22,7 @@ public class HibernateDaoSupport {
 		}
 	}
 	
-	private void openSession() {
+	protected void openSession() {
 		session = sessionFactory.openSession();
 		session.beginTransaction();
 	}
