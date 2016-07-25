@@ -5,7 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,6 +14,24 @@
 <title>Home page</title>
 </head>
 <body>
+	<sec:authorize access="hasRole('ROLE_USER')">
+		<!-- For login user -->
+		<c:url value="/j_spring_security_logout" var="logoutUrl" />
+		<form action="${logoutUrl}" method="post" id="logoutForm">
+		</form>
+		<script>
+			function formSubmit() {
+				document.getElementById("logoutForm").submit();
+			};
+		</script>
+
+		<h2>
+			User :  <sec:authentication property="principal.username"/> | <a
+				href="javascript:formSubmit()"> Logout</a> | <a href="home">Home</a>
+		</h2>
+
+
+	</sec:authorize>
 	<div class="page">
 		<div class="listOrders">
 			<table class="order-table">
